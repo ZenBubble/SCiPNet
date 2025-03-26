@@ -8,10 +8,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.scipnet.ui.theme.SCiPNetTheme
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.padding
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +25,7 @@ class MainActivity : ComponentActivity() {
             SCiPNetTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Big Chungdfsadus",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -32,16 +36,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    Surface(color = Color.Cyan) {
+        Text(
+            text = "Hello, my name is $name!",
+            modifier = modifier.padding(24.dp)
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     SCiPNetTheme {
-        Greeting("Android")
+        Greeting("Diabolical")
     }
 }
