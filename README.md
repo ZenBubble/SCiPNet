@@ -6,6 +6,7 @@ Open source android app for viewing SCP entries. Name is based off of [SCP-2317]
 ### 💛 = Actively being developed 
 ### 💚 = Implemented
 - ❤️ Android application on the Google play store written in Kotlin.
+- ❤️ Persistant data such as bookmarked and history
 - ❤️ Ability to view SCP entries on the main wiki through internet webscraping.
 - ❤️ Options for secondary materials such as tales or sister sites such as the Wanderers Library.
 - ❤️ A variety of reading options for accessibility and comfort, such as variable font size, font families, dark mode, etc.
