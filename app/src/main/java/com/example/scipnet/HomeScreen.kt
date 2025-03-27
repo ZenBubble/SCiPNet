@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.scipnet.ui.theme.SCiPNetTheme
+import com.example.scipnet.viewscp.data.PageInfo
 import it.skrape.core.htmlDocument
 import it.skrape.fetcher.HttpFetcher
 import it.skrape.fetcher.extractIt
@@ -24,22 +25,9 @@ import it.skrape.fetcher.skrape
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-
-
-        val extracted = skrape(HttpFetcher) {
-            request {
-                url = link
-            }
-            extractIt<PageInfo> { res ->
-                htmlDocument{
-                    res.title = "#page-title" { findFirst { text } }
-                    res.data = "#page-content" { findFirst { text } }
-                }
-            }
-        }
-
-
+        val extracted = PageInfo("https://scp-wiki.wikidot.com/scp-069")
 
         enableEdgeToEdge()
         setContent {
@@ -55,30 +43,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-const val link = "https://scp-wiki.wikidot.com/scp-173"
-
-data class PageInfo(
-    var title: String = "",
-    var data: String = ""
-)
-
-private fun fetch() {
-    val extracted = skrape(HttpFetcher) {
-        request {
-            url = link
-        }
-        extractIt<PageInfo> { res ->
-            htmlDocument{
-                res.title = "#page-title" { findFirst { text } }
-                res.data = "#page-content" { findFirst { text } }
-            }
-        }
-    }
-//    Log.d("SCPTITLE", extracted.title)
-//    Log.d("SCPDATA", extracted.data)
-}
-
 
 @Composable
 fun Greeting(title: String, data: String, modifier: Modifier = Modifier) {
