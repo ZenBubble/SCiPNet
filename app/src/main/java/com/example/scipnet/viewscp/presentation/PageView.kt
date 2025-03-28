@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SCiPNetTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    Display(
                         title = extracted.getTitle(),
                         data = extracted.getBody(),
                         modifier = Modifier.padding(innerPadding)
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(title: String, data: String, modifier: Modifier = Modifier) {
+fun Display(title: String, data: String, modifier: Modifier = Modifier) {
     Column {
         Surface(color = Color.Cyan) {
             Text(
@@ -52,23 +52,4 @@ fun Greeting(title: String, data: String, modifier: Modifier = Modifier) {
             modifier = modifier.padding(6.dp)
         )
     }
-
-//    LazyColumn {
-//        items(scps) {
-//            ListItem(it)
-//        }
-//    }
-}
-
-@Composable
-fun ListItem(name: String) {
-//    Card(
-//        modifier = Modifier.fillMaxWidth()
-//            .padding(12.dp)
-//    ) {
-//        Text(
-//            text = name,
-//            modifier = Modifier.padding(24.dp)
-//        )
-//    }
 }
