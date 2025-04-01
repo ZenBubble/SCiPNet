@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.example.scipnet.ui.theme.SCiPNetTheme
 import com.example.scipnet.viewscp.data.PageParser
 
-class MainActivity : ComponentActivity() {
+class PageView : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
