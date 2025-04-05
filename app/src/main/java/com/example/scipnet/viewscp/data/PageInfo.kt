@@ -1,7 +1,7 @@
 package com.example.scipnet.viewscp.data
 
 data class PageInfo(
-    var link: String
+    var link: String?
 ) {
     var httpStatusCode: Int = 0
     var httpStatusMessage: String = ""

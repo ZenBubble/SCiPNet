@@ -2,16 +2,15 @@ package com.example.scipnet.viewscp.data
 
 import it.skrape.core.htmlDocument
 import it.skrape.fetcher.HttpFetcher
-import it.skrape.fetcher.extract
 import it.skrape.fetcher.response
 import it.skrape.fetcher.skrape
 
-class PageParser(link: String) {
+class PageParser(link: String?) {
     var page = PageInfo(link)
     init {
-        val extracted = skrape(HttpFetcher) {
+        skrape(HttpFetcher) {
             request {
-                url = link
+                url = link.toString()
             }
             response {
                 htmlDocument{
