@@ -15,3 +15,6 @@ Open source android app for viewing SCP entries. Name is based off of [SCP-2317]
 
 ## Legal Jargon
 Content relating to the SCP Foundation, including the SCP Foundation logo, is licensed under Creative Commons Sharealike 3.0 and all concepts originate from https://scpwiki.com/ and its authors. This codebase and its assets, being derived from this content, is hereby also released under Creative Commons Sharealike 3.0.
+
+## But how do dar work?
+We use the wonderfully made SCP Data API made by tedivm, which can be found here https://scp-data.tedivm.com/. We use this API for quick navigation, but when on an individual SCP page, SCiPNet uses the SkrapeIt library for advanced css shenanigans, just how the creator wants it to be viewed.

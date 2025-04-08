@@ -22,7 +22,7 @@ import kotlin.text.isDigit
 fun HomeView(nav: NavController) {
     var link by remember { mutableStateOf("173") }
     Column {
-        Surface(color = Color.Cyan) {
+        Surface() {
             Text(
                 text = "Hello there!",
                 modifier = Modifier.padding(6.dp)

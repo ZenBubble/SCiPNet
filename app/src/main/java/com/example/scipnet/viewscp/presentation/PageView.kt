@@ -16,11 +16,26 @@ import com.example.scipnet.viewscp.data.PageParser
 @Composable
 fun PageView(link: String?) {
     val fullLink = "https://scp-wiki.wikidot.com/scp-$link"
-    val extracted = PageParser(fullLink)
-    val title = extracted.getTitle()
-    val data = extracted.getBody()
+    var title = ""
+    var data = ""
+    try {
+        val extracted = PageParser(fullLink)
+        title = extracted.getTitle()
+        data = extracted.getBody()
+    } catch (err: Exception) {
+        Surface(color = Color.Red) {
+            Text(
+                text = "ERROR!:" + err.toString(),
+            )
+        }
+    }
+    DisplaySCP(title, data)
+}
+
+@Composable
+fun DisplaySCP(title:String, data:String) {
     Column {
-        Surface(color = Color.Cyan) {
+        Surface() {
             Text(
                 text = "This is $title!",
                 modifier = Modifier.padding(6.dp)
