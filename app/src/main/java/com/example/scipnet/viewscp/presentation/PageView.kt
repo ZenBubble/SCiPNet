@@ -1,5 +1,6 @@
 package com.example.scipnet
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -12,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.scipnet.ui.theme.SCiPNetTheme
 import com.example.scipnet.viewscp.data.PageParser
+import kotlinx.coroutines.runBlocking
 
 @Composable
 fun PageView(link: String?) {
@@ -23,6 +25,7 @@ fun PageView(link: String?) {
         title = extracted.getTitle()
         data = extracted.getBody()
     } catch (err: Exception) {
+        Log.d("SCP_VIEW_ERROR", err.toString())
         Surface(color = Color.Red) {
             Text(
                 text = "ERROR!:" + err.toString(),
